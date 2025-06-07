@@ -1,41 +1,68 @@
-# IMDb Movies Docker Setup
+# Movie IMDb Ratings API
 
-This guide explains how to build, run, and push the Docker image for the IMDb Movies application.
+This project is a FastAPI-based web service for working with IMDb movie ratings. It uses PostgreSQL for data storage and is containerized with Docker.
 
-## Build the Docker Image
+## Features
 
-1. Open your terminal in the project directory.
-2. Build the Docker image:
+- FastAPI backend
+- PostgreSQL database support
+- Dockerized for easy deployment
 
-    ```powershell
-    docker build -t dhruv_senkusha .
+## Requirements
+
+- Docker
+- Docker Compose (optional, if you want to run a database as well)
+
+## Setup
+
+### 1. Clone the repository
+
+```sh
+git clone <your-repo-url>
+cd imdb_movies
+```
+
+### 2. Build the Docker image
+
+```sh
+docker build -t manaanshshah/movie_final_assginment .
+```
+
+### 3. Run the Docker container
+
+```sh
+docker run -p 8000:8000 manaanshshah/movie_final_assginment
+```
+
+The API will be available at [http://localhost:8000](http://localhost:8000).
+
+### 4. Environment Variables
+
+If your app uses environment variables (e.g., for database connection), create a `.env` file in the project root. Example:
+
+```
+DATABASE_URL=postgresql://user:password@host:port/dbname
+```
+
+## API Documentation
+
+Once running, visit [http://localhost:8000/docs](http://localhost:8000/docs) for the interactive Swagger UI.
+
+## Development
+
+To run locally without Docker:
+
+1. Install Python 3.11
+2. Install dependencies:
+    ```sh
+    pip install -r req.txt
+    ```
+3. Start the server:
+    ```sh
+    uvicorn main:app --reload
     ```
 
-## Run the Container
+## License
 
-Run the container and map port 8000 to access the application:
+MIT
 
-```powershell
-docker run -p 8000:8000 dhruv_senkusha
-
-
-## Push Docker Image to Docker Hub
-
-1. Tag your image:
-    ```bash
-    docker tag dhruv_senkusha <your-dockerhub-username>/dhruv_senkusha
-    ```
-
-2. Log in to Docker Hub:
-    ```bash
-    docker login
-    ```
-
-3. Push the image:
-    ```bash
-    docker push <your-dockerhub-username>/dhruv_senkusha
-    ```
-
-You can now pull this image using:
-```bash
-docker pull <your-dockerhub-username>/dhruv_senkusha
