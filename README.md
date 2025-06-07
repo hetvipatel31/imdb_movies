@@ -31,6 +31,11 @@ This is a FastAPI-based movie project.
 
     Open your browser and go to: [http://localhost:8000/docs](http://localhost:8000/docs)
 
+## Docker Hub
+
+You can find the published Docker image here:  
+[https://hub.docker.com/repository/docker/hetvipatel31/movieproject/general](https://hub.docker.com/repository/docker/hetvipatel31/movieproject/general)
+
 ## Project Structure
 
 - `main.py` - FastAPI application entry point
