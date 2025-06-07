@@ -38,4 +38,4 @@ docker run -p 8000:8000 dhruv_senkusha
 
 You can now pull this image using:
 ```bash
-docker pull <your-dockerhub-username>/dhruv_senkusha
+docker pull dhruvvthaker/dhruv_senkusha:latest
