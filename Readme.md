@@ -43,6 +43,8 @@ If your app uses environment variables (e.g., for database connection), create a
 ```
 DATABASE_URL=postgresql://user:password@host:port/dbname
 ```
+## Docker Hub Repositiory
+DockerHub url= https://hub.docker.com/repository/docker/manaanshshah/movie_final_assginment/general
 
 ## API Documentation
 
